@@ -1,0 +1,9 @@
+<!DOCTYPE RCC><RCC version="1.0">
+<qresource>
+    <file>resourcesPaints/Lviv1.jpg</file>
+    <file>resourcesPaints/Lviv2.jpg</file>
+    <file>resourcesPaints/Lviv3.jpg</file>
+	<file>resourcesPaints/LvivLarge1.jpg</file>
+	<file>resourcesPaints/LvivLarge2.jpg</file>
+</qresource>
+</RCC>
