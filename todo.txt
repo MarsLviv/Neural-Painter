@@ -1,0 +1,23 @@
+* add UML UI
+
+* second picture as layout
+* scrols on pictures
+* division into classes (OOP, SOLID)
+* set tree_view/list_view width
+* add UML Busines Logic
+* glich in list view
+* line up tree view/list view with pictures
+* add logging
+* add settings
+
+* picture's labels to normal view
+* add title to dropdown
+* smaller dropdown
+* smaller buttons
+
+* keep UML in relevant state
+
+
+
+
+
