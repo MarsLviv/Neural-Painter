@@ -144,4 +144,4 @@ void MainWindow::onTreeViewClicked(const QModelIndex &index)
 
 
 
-// https://github.com/reiinakano/neural-painters
+
