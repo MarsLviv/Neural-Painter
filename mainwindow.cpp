@@ -35,6 +35,7 @@ void MainWindow::createUI()
 
     catalogLayout->addWidget(dirView);
     catalogLayout->addWidget(fileView);
+    catalogLayout->setContentsMargins(0, 0, 0, 0);
 
     wgtCatalog->setLayout(catalogLayout);
 
