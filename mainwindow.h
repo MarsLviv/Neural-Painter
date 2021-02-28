@@ -14,8 +14,9 @@
 #include <QPushButton>
 
 #include "widgetcatalog.h"
-#include "wgtdropdownfeatures.h"
+//#include "wgtdropdownfeatures.h"
 
+class WgtInputImage;
 
 class MainWindow : public QMainWindow
 {
@@ -23,27 +24,29 @@ class MainWindow : public QMainWindow
 
     QSplitter * mainSplitter {nullptr};
 
-    QLabel * inputImageTitle {nullptr};
+    //QLabel * inputImageTitle {nullptr};
     QLabel * outputImage {nullptr};
 
     WidgetCatalog * wgtCatalog {nullptr};
 
-    QScrollArea * wgtInputImage {nullptr};
+    WgtInputImage * wgtInputImage1 {nullptr};
+
+    //QScrollArea * wgtInputImage {nullptr};
     QScrollArea * wgtOutputImage {nullptr};
 
-    QScrollArea * wgtOutputImage1 {nullptr};
+    //QScrollArea * wgtOutputImage1 {nullptr};
 
     QImage imageOutput {nullptr};
 
-    QVBoxLayout* inputPictureLayout {nullptr};
+    //QVBoxLayout* inputPictureLayout {nullptr};
     QVBoxLayout* outputPictureLayout {nullptr};
 
 
-    WgtDropDownFeatures * wgtDropDownFeatures {nullptr};
+    //WgtDropDownFeatures * wgtDropDownFeatures {nullptr};
 
     QLabel * outputPictureLabel {nullptr};
 
-    QPushButton *convertBtn {nullptr};
+    //QPushButton *convertBtn {nullptr};
     QPushButton *saveBtn {nullptr};
     QPushButton *exitBtn {nullptr};
 

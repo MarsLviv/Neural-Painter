@@ -1,5 +1,6 @@
 ﻿#include "mainwindow.h"
 #include "wgtimage.h"
+#include "wgtinputimage.h"
 
 #include <QTreeView>
 #include <QListView>
@@ -20,7 +21,10 @@ void MainWindow::createUI()
     wgtCatalog = new WidgetCatalog();
     mainSplitter->addWidget(wgtCatalog);
 
-
+    // middle column
+    wgtInputImage1 = new WgtInputImage(this);
+    mainSplitter->addWidget(wgtInputImage1);
+/*
     // middle column
     wgtInputImage = new QScrollArea;
     wgtInputImage->setWidgetResizable(true);
@@ -28,7 +32,7 @@ void MainWindow::createUI()
     inputPictureLayout = new QVBoxLayout(this);
 
     // title
-    inputImageTitle = new QLabel("INPUT IMAGE", this);
+    inputImageTitle = new QLabel("INPUT IMAGE", this);// TODO: move to settings
     inputImageTitle->setAlignment(Qt::AlignCenter);
     //https://doc.qt.io/qt-5/stylesheet-reference.html
     // TODO: move to settings
@@ -60,7 +64,8 @@ void MainWindow::createUI()
 
     wgtInputImage->setLayout(inputPictureLayout);
 
-    mainSplitter->addWidget(wgtInputImage);
+    //mainSplitter->addWidget(wgtInputImage);// last
+*/
 
     // output image
     wgtOutputImage = new QScrollArea;
