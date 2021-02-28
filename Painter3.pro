@@ -11,11 +11,17 @@ CONFIG += c++17
 SOURCES += \
     applocation.cpp \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    wgtdropdownfeatures.cpp \
+    wgtimage.cpp \
+    widgetcatalog.cpp
 
 HEADERS += \
     applocation.h \
-    mainwindow.h
+    mainwindow.h \
+    wgtdropdownfeatures.h \
+    wgtimage.h \
+    widgetcatalog.h
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

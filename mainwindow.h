@@ -13,54 +13,48 @@
 #include <QScrollArea>
 #include <QPushButton>
 
+#include "widgetcatalog.h"
+#include "wgtdropdownfeatures.h"
+
+
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
 
-    QLabel * inputImage;
-    QLabel * outputImage;
+    QSplitter * mainSplitter {nullptr};
 
-    QSplitter * mainSplitter;
-    //QSplitter * imageSplitter;
+    QLabel * inputImageTitle {nullptr};
+    QLabel * outputImage {nullptr};
 
-    QWidget * wgtCatalog;
-    //QWidget * wgtInputImage;
-    //QWidget * wgtOutputImage;
-    QScrollArea * wgtInputImage;
-    QScrollArea * wgtOutputImage;
+    WidgetCatalog * wgtCatalog {nullptr};
 
+    QScrollArea * wgtInputImage {nullptr};
+    QScrollArea * wgtOutputImage {nullptr};
 
-    QVBoxLayout* catalogLayout;
-    QVBoxLayout* inputPictureLayout;
-    QVBoxLayout* outputPictureLayout;
+    QScrollArea * wgtOutputImage1 {nullptr};
 
+    QImage imageOutput {nullptr};
 
-    //QLabel * label1;
-    //QLabel * label2;
-    //QLabel * label3;
-    QLabel * inputPictureLabel;
-    QLabel * outputPictureLabel;
+    QVBoxLayout* inputPictureLayout {nullptr};
+    QVBoxLayout* outputPictureLayout {nullptr};
 
 
+    WgtDropDownFeatures * wgtDropDownFeatures {nullptr};
 
-    QFileSystemModel *dirModel;
-    QFileSystemModel *fileModel;
+    QLabel * outputPictureLabel {nullptr};
 
-    QTreeView *dirView;
-    QListView *fileView;
-
-    QComboBox *dropDownFeatures;
-
-    QPushButton *convertBtn;
-    QPushButton *exitBtn;
+    QPushButton *convertBtn {nullptr};
+    QPushButton *saveBtn {nullptr};
+    QPushButton *exitBtn {nullptr};
 
     void createUI();
+
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
 private:
-    void onTreeViewClicked(const QModelIndex &index);
+
 
 
 

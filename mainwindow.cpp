@@ -1,102 +1,78 @@
-#include "mainwindow.h"
+﻿#include "mainwindow.h"
+#include "wgtimage.h"
 
 #include <QTreeView>
 #include <QListView>
 #include <QFileSystemModel>
+#include <QApplication>
+#include <QScreen>
+#include <QImageReader>
+#include <QMessageBox>
+#include <QImage>
+#include <QColorSpace>
+
 
 void MainWindow::createUI()
 {
     mainSplitter = new QSplitter(Qt::Horizontal);
 
-    //mainSplitter->setStretchFactor(0, 1);
-    //mainSplitter->setStretchFactor(1, 2);
-    //mainSplitter->setStretchFactor(2, 2);
-
-    // directory tree
-    wgtCatalog = new QWidget;
-
-    catalogLayout = new QVBoxLayout;
-
-    dirModel = new QFileSystemModel;
-    dirModel->setRootPath(QDir::currentPath());
-    dirModel->setFilter(QDir::NoDotAndDotDot | QDir::AllDirs);
-
-    dirView = new QTreeView();
-    dirView->setModel(dirModel);
-
-
-    fileModel = new QFileSystemModel;
-    fileModel->setFilter(QDir::NoDotAndDotDot | QDir::Files);
-    QString mPath = "";//"C:/";
-    fileModel->setRootPath(mPath);
-
-    fileView = new QListView();
-    fileView->setModel(fileModel);
-
-    catalogLayout->addWidget(dirView);
-    catalogLayout->addWidget(fileView);
-    catalogLayout->setContentsMargins(0, 0, 0, 0);
-
-    wgtCatalog->setLayout(catalogLayout);
-
+    // Directory and File Explorer
+    wgtCatalog = new WidgetCatalog();
     mainSplitter->addWidget(wgtCatalog);
 
-    connect(dirView, &QTreeView::clicked, this, &MainWindow::onTreeViewClicked);
-    connect(dirView, &QTreeView::expanded, this, &MainWindow::onTreeViewClicked);
 
-    // second splitter
-    //imageSplitter = new QSplitter(Qt::Horizontal);
-
-    // input image
-    wgtInputImage = new QScrollArea;//QWidget;
+    // middle column
+    wgtInputImage = new QScrollArea;
     wgtInputImage->setWidgetResizable(true);
 
-    inputPictureLayout = new QVBoxLayout;
+    inputPictureLayout = new QVBoxLayout(this);
 
-    inputImage = new QLabel("INPUT IMAGE");
+    // title
+    inputImageTitle = new QLabel("INPUT IMAGE", this);
+    inputImageTitle->setAlignment(Qt::AlignCenter);
+    //https://doc.qt.io/qt-5/stylesheet-reference.html
+    // TODO: move to settings
+    inputImageTitle->setStyleSheet("QLabel {    background-color : grey; padding: 6px; "
+                                    " font : Times New Roman;  font-size: 24px; font-style: italic;"
+                                    " color : blue; border-radius : 10px; border-style : outset; border-width : 2px; border-color : beige; }");
 
-    inputPictureLabel = new QLabel;
-    inputPictureLabel->setAlignment(Qt::AlignCenter);
+    inputPictureLayout->addWidget(inputImageTitle);
 
-    QString filename = ":resourcesPaints/LvivLarge1.jpg";//LvivLarge1
-    QPixmap inputPixmap;
-    if(inputPixmap.load(filename))
-    {
-        inputPixmap = inputPixmap.scaled(inputPictureLabel->size(), Qt::KeepAspectRatio);
-        inputPictureLabel->setPixmap(inputPixmap);
-        inputPictureLabel->setMask(inputPixmap.mask());
-    }
-
+    // image
+    WgtImage *inputImage = new WgtImage(this);
 
     inputPictureLayout->addWidget(inputImage);
-    inputPictureLayout->addWidget(inputPictureLabel);
-
-    wgtInputImage->setLayout(inputPictureLayout);
-    //imageSplitter->addWidget(wgtInputImage);
-    mainSplitter->addWidget(wgtInputImage);
+    QString fileName(":resourcesPaints/LvivLarge1.jpg");
+    inputImage->setImage(fileName);
 
     // dropdown menu
-    dropDownFeatures = new QComboBox();
-    dropDownFeatures->addItem("item " + QString::number(1));
-    dropDownFeatures->addItem("item " + QString::number(2));
+    wgtDropDownFeatures = new WgtDropDownFeatures(this);
+    inputPictureLayout->addWidget(wgtDropDownFeatures);
 
-    inputPictureLayout->addWidget(dropDownFeatures);
-    // </> dropdown menu
-
-    convertBtn = new QPushButton("Convert");
+    convertBtn = new QPushButton("Convert", this);
+    convertBtn->setStyleSheet("QPushButton {    background-color : grey; "
+                                    " font : Times New Roman;  font-size: 20px; "
+                                    " color : black;  }");
+    //auto height = convertBtn->height();
+    //convertBtn->setGeometry((wgtDropDownFeatures->width() / 2), height);
+    //convertBtn->set
     inputPictureLayout->addWidget(convertBtn);
 
+    wgtInputImage->setLayout(inputPictureLayout);
+
+    mainSplitter->addWidget(wgtInputImage);
+
     // output image
-    wgtOutputImage = new QScrollArea;//QWidget;
+    wgtOutputImage = new QScrollArea;
     wgtOutputImage->setWidgetResizable(true);
+
 
     outputPictureLayout = new QVBoxLayout;
 
     outputImage = new QLabel("CONVERTED IMAGE");
 
     outputPictureLabel = new QLabel;
-
-
+    QString filename;
     filename = ":resourcesPaints/Lviv3.jpg";
     outputPictureLabel->setAlignment(Qt::AlignCenter);
     QPixmap outputPixmap;
@@ -110,13 +86,20 @@ void MainWindow::createUI()
     outputPictureLayout->addWidget(outputPictureLabel);
 
     wgtOutputImage->setLayout(outputPictureLayout);
-    //imageSplitter->addWidget(wgtOutputImage);
+
     mainSplitter->addWidget(wgtOutputImage);
 
-    //mainSplitter->addWidget(imageSplitter);
+
+    saveBtn = new QPushButton("Save Image ...");
+    outputPictureLayout->addWidget(saveBtn);
 
     exitBtn = new QPushButton("Exit");
     outputPictureLayout->addWidget(exitBtn);
+
+    mainSplitter->setStretchFactor(0, 2); // TODO: move to Settings
+    mainSplitter->setStretchFactor(1, 5);
+    mainSplitter->setStretchFactor(2, 5);
+    //mainSplitter->setSizes(QList<int>({INT_MAX, INT_MAX, INT_MAX}));
 
 
     setCentralWidget(mainSplitter);
@@ -133,14 +116,7 @@ MainWindow::~MainWindow()
 
 }
 
-void MainWindow::onTreeViewClicked(const QModelIndex &index)
-{
-    qDebug() << "onTreeViewClicked";
 
-    QString mPath = dirModel->fileInfo(index).absoluteFilePath();
-    qDebug() << "mPath" << mPath;
-    fileView->setRootIndex(fileModel->setRootPath(mPath));
-};
 
 
 
