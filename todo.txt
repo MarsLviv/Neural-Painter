@@ -1,19 +1,23 @@
-* add UML UI
 
-* second picture as layout
-* scrols on pictures
-* division into classes (OOP, SOLID)
-* set tree_view/list_view width
+
+* second picture as layout (make Util class for it)
+* default picture-logo as random from list (make Util class for it)
+
+* add readme file
+
+* scrols on pictures (zoomIn zoomOut autoZoom as menu)
+
 * add UML Busines Logic
+* add Night conversion
+* add Colorization conversion
+
 * glich in list view
-* line up tree view/list view with pictures
+
 * add logging
 * add settings
 
-* picture's labels to normal view
-* add title to dropdown
-* smaller dropdown
-* smaller buttons
+* improve design dropdown Menu, buttons
+
 
 * keep UML in relevant state
 
