@@ -3,15 +3,12 @@
 
 #include <QMainWindow>
 
-#include <QSplitter>
-#include <QScrollArea>
-#include <QPushButton>
-
 class WidgetCatalog;
 class WgtInputImage;
+class WgtOutputImage;
 class QVBoxLayout;
+class QSplitter;
 class QLabel;
-
 
 class MainWindow : public QMainWindow
 {
@@ -19,23 +16,24 @@ class MainWindow : public QMainWindow
 
     QSplitter * mainSplitter {nullptr};
 
-    QLabel * outputImage {nullptr};
+    //QLabel * outputImage {nullptr};
 
     WidgetCatalog * wgtCatalog {nullptr};
 
     WgtInputImage * wgtInputImage1 {nullptr};
+    WgtOutputImage * wgtOutputImage {nullptr};
 
-    QScrollArea * wgtOutputImage {nullptr};
+    //QScrollArea * wgtOutputImage {nullptr};
 
-    QImage imageOutput {nullptr};
+    //QImage imageOutput {nullptr};
 
-    QVBoxLayout* outputPictureLayout {nullptr};
+    //QVBoxLayout* outputPictureLayout {nullptr};
 
 
-    QLabel * outputPictureLabel {nullptr};
+    //QLabel * outputPictureLabel {nullptr};
 
-    QPushButton *saveBtn {nullptr};
-    QPushButton *exitBtn {nullptr};
+    //QPushButton *saveBtn {nullptr};
+    //QPushButton *exitBtn {nullptr};
 
     void createUI();
 

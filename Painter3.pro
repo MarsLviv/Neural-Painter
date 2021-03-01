@@ -15,6 +15,7 @@ SOURCES += \
     wgtdropdownfeatures.cpp \
     wgtimage.cpp \
     wgtinputimage.cpp \
+    wgtoutputimage.cpp \
     widgetcatalog.cpp
 
 HEADERS += \
@@ -23,6 +24,7 @@ HEADERS += \
     wgtdropdownfeatures.h \
     wgtimage.h \
     wgtinputimage.h \
+    wgtoutputimage.h \
     widgetcatalog.h
 
 # Default rules for deployment.

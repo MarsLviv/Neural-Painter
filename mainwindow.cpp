@@ -1,6 +1,7 @@
 ﻿#include "mainwindow.h"
 #include "wgtimage.h"
 #include "wgtinputimage.h"
+#include "wgtoutputimage.h"
 #include "widgetcatalog.h"
 
 #include <QTreeView>
@@ -14,6 +15,7 @@
 #include <QImage>
 #include <QColorSpace>
 #include <QBoxLayout>
+#include <QSplitter>
 
 void MainWindow::createUI()
 {
@@ -23,13 +25,18 @@ void MainWindow::createUI()
     wgtCatalog = new WidgetCatalog();
     mainSplitter->addWidget(wgtCatalog);
 
-    // middle column
+    // middle column - input image
     wgtInputImage1 = new WgtInputImage(this);
     mainSplitter->addWidget(wgtInputImage1);
 
 
-    // output image
-    wgtOutputImage = new QScrollArea;
+    // right column - output image
+    wgtOutputImage= new WgtOutputImage(this);
+    mainSplitter->addWidget(wgtOutputImage);
+
+
+    // right column - output image
+    /*wgtOutputImage = new QScrollArea;
     wgtOutputImage->setWidgetResizable(true);
 
 
@@ -60,7 +67,7 @@ void MainWindow::createUI()
     outputPictureLayout->addWidget(saveBtn);
 
     exitBtn = new QPushButton("Exit");
-    outputPictureLayout->addWidget(exitBtn);
+    outputPictureLayout->addWidget(exitBtn);*/
 
     mainSplitter->setStretchFactor(0, 2); // TODO: move to Settings
     mainSplitter->setStretchFactor(1, 5);
