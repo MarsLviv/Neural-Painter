@@ -15,6 +15,12 @@ class WidgetCatalog : public QWidget
 {
     Q_OBJECT
 
+public:
+    WidgetCatalog(QWidget *parent = nullptr);
+
+private:
+    void onTreeViewClicked(const QModelIndex &index);
+
     QVBoxLayout *catalogLayout {nullptr};
 
     QFileSystemModel *dirModel {nullptr};
@@ -22,12 +28,6 @@ class WidgetCatalog : public QWidget
 
     QTreeView *dirView {nullptr};
     QListView *fileView {nullptr};
-
-public:
-    WidgetCatalog(QWidget *parent = nullptr);
-
-private:
-    void onTreeViewClicked(const QModelIndex &index);
 };
 
 #endif // WIDGETCATALOG_H

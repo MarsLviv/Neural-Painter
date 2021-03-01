@@ -9,7 +9,7 @@ class QLabel;
 
 class WgtImage;
 
-/*  Class implements Output picture and buttons to Save it and Exit from app
+/*  Class implements Output picture and button to Save it and button to Exit from app
  *  For details see UML Hierarchy diagram
  */
 class WgtOutputImage : public QScrollArea

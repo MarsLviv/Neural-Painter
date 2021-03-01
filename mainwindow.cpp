@@ -1,28 +1,16 @@
 ﻿#include "mainwindow.h"
-#include "wgtimage.h"
 #include "wgtinputimage.h"
 #include "wgtoutputimage.h"
 #include "widgetcatalog.h"
 
-#include <QTreeView>
-#include <QListView>
-#include <QFileSystemModel>
-#include <QApplication>
-#include <QScreen>
-#include <QLabel>
-#include <QImageReader>
-#include <QMessageBox>
-#include <QImage>
-#include <QColorSpace>
-#include <QBoxLayout>
 #include <QSplitter>
 
 void MainWindow::createUI()
 {
-    mainSplitter = new QSplitter(Qt::Horizontal);
+    mainSplitter = new QSplitter(Qt::Horizontal, this);
 
     // left column - Directory and File Explorer
-    wgtCatalog = new WidgetCatalog();
+    wgtCatalog = new WidgetCatalog(this);
     mainSplitter->addWidget(wgtCatalog);
 
     // middle column - input image

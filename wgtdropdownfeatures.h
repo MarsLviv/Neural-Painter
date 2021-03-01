@@ -11,13 +11,14 @@ class WgtDropDownFeatures : public QWidget
 {
     Q_OBJECT
 
+public:
+    WgtDropDownFeatures(QWidget *parent = nullptr);
+
+private:
     QHBoxLayout * mainLayout {nullptr};
 
     QLabel * title {nullptr};
     QComboBox * dropDownFeatures {nullptr};
-
-public:
-    WgtDropDownFeatures(QWidget *parent = nullptr);
 };
 
 #endif // WGTDROPDOWNFEATURES_H

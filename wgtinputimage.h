@@ -4,8 +4,8 @@
 #include<QScrollArea>
 
 class QVBoxLayout;
-class QLabel;
 class QPushButton;
+class QLabel;
 
 class WgtImage;
 class WgtDropDownFeatures;
@@ -24,8 +24,6 @@ private:
     WgtImage * inputImage {nullptr};
     WgtDropDownFeatures * wgtDropDownFeatures {nullptr};
     QPushButton * convertBtn {nullptr};
-
-
 };
 
 #endif // WGTINPUTIMAGE_H
