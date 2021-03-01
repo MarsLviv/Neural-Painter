@@ -1,17 +1,19 @@
 ﻿#include "mainwindow.h"
 #include "wgtimage.h"
 #include "wgtinputimage.h"
+#include "widgetcatalog.h"
 
 #include <QTreeView>
 #include <QListView>
 #include <QFileSystemModel>
 #include <QApplication>
 #include <QScreen>
+#include <QLabel>
 #include <QImageReader>
 #include <QMessageBox>
 #include <QImage>
 #include <QColorSpace>
-
+#include <QBoxLayout>
 
 void MainWindow::createUI()
 {
@@ -24,48 +26,7 @@ void MainWindow::createUI()
     // middle column
     wgtInputImage1 = new WgtInputImage(this);
     mainSplitter->addWidget(wgtInputImage1);
-/*
-    // middle column
-    wgtInputImage = new QScrollArea;
-    wgtInputImage->setWidgetResizable(true);
 
-    inputPictureLayout = new QVBoxLayout(this);
-
-    // title
-    inputImageTitle = new QLabel("INPUT IMAGE", this);// TODO: move to settings
-    inputImageTitle->setAlignment(Qt::AlignCenter);
-    //https://doc.qt.io/qt-5/stylesheet-reference.html
-    // TODO: move to settings
-    inputImageTitle->setStyleSheet("QLabel {    background-color : grey; padding: 6px; "
-                                    " font : Times New Roman;  font-size: 24px; font-style: italic;"
-                                    " color : blue; border-radius : 10px; border-style : outset; border-width : 2px; border-color : beige; }");
-
-    inputPictureLayout->addWidget(inputImageTitle);
-
-    // image
-    WgtImage *inputImage = new WgtImage(this);
-
-    inputPictureLayout->addWidget(inputImage);
-    QString fileName(":resourcesPaints/LvivLarge1.jpg");
-    inputImage->setImage(fileName);
-
-    // dropdown menu
-    wgtDropDownFeatures = new WgtDropDownFeatures(this);
-    inputPictureLayout->addWidget(wgtDropDownFeatures);
-
-    convertBtn = new QPushButton("Convert", this);
-    convertBtn->setStyleSheet("QPushButton {    background-color : grey; "
-                                    " font : Times New Roman;  font-size: 20px; "
-                                    " color : black;  }");
-    //auto height = convertBtn->height();
-    //convertBtn->setGeometry((wgtDropDownFeatures->width() / 2), height);
-    //convertBtn->set
-    inputPictureLayout->addWidget(convertBtn);
-
-    wgtInputImage->setLayout(inputPictureLayout);
-
-    //mainSplitter->addWidget(wgtInputImage);// last
-*/
 
     // output image
     wgtOutputImage = new QScrollArea;
