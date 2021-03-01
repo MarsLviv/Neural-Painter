@@ -7,6 +7,9 @@
 
 * scrols on pictures (zoomIn zoomOut autoZoom as menu)
 
+* doxygen comments
+* multilanguage	https://doc.qt.io/qt-5/i18n-source-translation.html
+
 * add UML Busines Logic
 * add Night conversion
 * add Colorization conversion
