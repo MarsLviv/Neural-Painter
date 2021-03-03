@@ -1,4 +1,5 @@
 #include "wgtoutputimage.h"
+#include "Utils/utilspicture.h"
 
 #include<wgtimage.h>
 
@@ -28,7 +29,9 @@ WgtOutputImage::WgtOutputImage(QWidget *parent) : QScrollArea(parent)
     outputImage = new WgtImage(this);
     mainLayout->addWidget(outputImage);
 
-    QString fileName(":resourcesPaints/LvivLarge1.jpg");
+    //QString fileName(":resourcesPaints/LvivLarge1.jpg");
+    auto pictureNumber = Utils::randomPictureName();
+    QString fileName(":Lviv1.jpg");
     outputImage->setImage(fileName);
 
 

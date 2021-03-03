@@ -29,7 +29,8 @@ WgtInputImage::WgtInputImage(QWidget *parent) : QScrollArea(parent)
     inputImage = new WgtImage(this);
 
     mainLayout->addWidget(inputImage);
-    QString fileName(":resourcesPaints/LvivLarge1.jpg");
+    //QString fileName(":resourcesPaints/LvivLarge1.jpg");
+    QString fileName(":Lviv1.jpg");
     inputImage->setImage(fileName);
 
     // dropdown menu

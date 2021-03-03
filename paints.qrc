@@ -1,9 +1,9 @@
 <!DOCTYPE RCC><RCC version="1.0">
 <qresource>
-    <file>resourcesPaints/Lviv1.jpg</file>
-    <file>resourcesPaints/Lviv2.jpg</file>
-    <file>resourcesPaints/Lviv3.jpg</file>
-	<file>resourcesPaints/LvivLarge1.jpg</file>
-	<file>resourcesPaints/LvivLarge2.jpg</file>
+    <file alias="Lviv1.jpg">resourcesPaints/Lviv1.jpg</file>
+    <file alias="Lviv2.jpg">resourcesPaints/Lviv2.jpg</file>
+    <file alias="Lviv3.jpg">resourcesPaints/Lviv3.jpg</file>
+	<file alias="LvivLarge1.jpg">resourcesPaints/LvivLarge1.jpg</file>
+	<file alias="LvivLarge2.jpg">resourcesPaints/LvivLarge2.jpg</file>
 </qresource>
 </RCC>

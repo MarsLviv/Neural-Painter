@@ -19,6 +19,7 @@ SOURCES += \
     widgetcatalog.cpp
 
 HEADERS += \
+    Utils/utilspicture.h \
     applocation.h \
     mainwindow.h \
     wgtdropdownfeatures.h \
