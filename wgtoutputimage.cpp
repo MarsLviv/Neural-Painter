@@ -27,14 +27,11 @@ WgtOutputImage::WgtOutputImage(QWidget *parent) : QScrollArea(parent)
 
     // image
     outputImage = new WgtImage(this);
+
     mainLayout->addWidget(outputImage);
 
-    //QString fileName(":resourcesPaints/LvivLarge1.jpg");
-    auto pictureNumber = Utils::randomPictureName();
-    QString fileName(":Lviv1.jpg");
-    outputImage->setImage(fileName);
-
-
+    auto pictureFile = Utils::randomPictureName();
+    outputImage->setImage(pictureFile);
 
     saveBtn = new QPushButton("Save ...", this);
     saveBtn->setStyleSheet("QPushButton {    background-color : grey; "
