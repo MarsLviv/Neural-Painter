@@ -19,6 +19,7 @@ SOURCES += \
     widgetcatalog.cpp
 
 HEADERS += \
+    Conversion/imageconverter.h \
     Utils/utilspicture.h \
     applocation.h \
     mainwindow.h \
