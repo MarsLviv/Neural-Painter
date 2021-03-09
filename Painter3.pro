@@ -9,25 +9,25 @@ CONFIG += c++17
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-    applocation.cpp \
     main.cpp \
-    mainwindow.cpp \
-    wgtdropdownfeatures.cpp \
-    wgtimage.cpp \
-    wgtinputimage.cpp \
-    wgtoutputimage.cpp \
-    widgetcatalog.cpp
+    Utils/applocation.cpp \
+    UI/mainwindow.cpp \
+    UI/wgtdropdownfeatures.cpp \
+    UI/wgtimage.cpp \
+    UI/wgtinputimage.cpp \
+    UI/wgtoutputimage.cpp \
+    UI/widgetcatalog.cpp
 
 HEADERS += \
     Conversion/imageconverter.h \
     Utils/utilspicture.h \
-    applocation.h \
-    mainwindow.h \
-    wgtdropdownfeatures.h \
-    wgtimage.h \
-    wgtinputimage.h \
-    wgtoutputimage.h \
-    widgetcatalog.h
+    Utils/applocation.h \
+    UI/mainwindow.h \
+    UI/wgtdropdownfeatures.h \
+    UI/wgtimage.h \
+    UI/wgtinputimage.h \
+    UI/wgtoutputimage.h \
+    UI/widgetcatalog.h
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
