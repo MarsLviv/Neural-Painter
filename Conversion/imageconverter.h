@@ -12,7 +12,7 @@ public:
     ImageConverter(QObject *parentt = nullptr);
     virtual ~ImageConverter();
 
-    virtual void Convert();
+    virtual void Convert(QImage &);
 };
 
 #endif // IMAGECONVERTER_H
