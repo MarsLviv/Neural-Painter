@@ -10,9 +10,9 @@ class ImageConverter : QObject
 
 public:
     ImageConverter(QObject *parentt = nullptr);
-    virtual ~ImageConverter();
+    //virtual ~ImageConverter();
 
-    virtual void Convert(QImage &);
+    //virtual void Convert(QImage &);
 };
 
 #endif // IMAGECONVERTER_H

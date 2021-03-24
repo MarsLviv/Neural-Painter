@@ -1,4 +1,5 @@
 #include "wgtdropdownfeatures.h"
+#include "Helpers/constants.h"
 
 #include<QLabel>
 #include<QHBoxLayout>
@@ -10,19 +11,16 @@ WgtDropDownFeatures::WgtDropDownFeatures(QWidget *parent) : QWidget(parent)
 
     mainLayout = new QHBoxLayout(this);
 
-    title = new QLabel("Select Conversion", this);
+    title = new QLabel(Helpers::titleDropdownMenuLabel, this);
     title->setAlignment(Qt::AlignCenter);
-    // TODO: move to settings
-    title->setStyleSheet("QLabel {    background-color : grey; "
-                                    " font : Times New Roman;  font-size: 20px; "
-                                    " color : black;  }");
+    title->setStyleSheet(Helpers::styleDropdownMenuLabel);
     mainLayout->addWidget(title);
 
     dropDownFeatures = new QComboBox(this);
-    // TODO: move to settings
-    dropDownFeatures->setStyleSheet("QComboBox {    background-color : grey; "
-                                    " font : Times New Roman;  font-size: 20px; "
-                                    " color : black;  }");
+    dropDownFeatures->setStyleSheet(Helpers::styleDropdownMenuList);
+    /*dropDownFeatures->setStyleSheet("QComboBox {    background-color : grey; "
+                                    " font : Times New Roman;  font-size: 24px; "
+                                    " color : black;  }");*/
 
     for (int i = 0; i < efects.size(); ++i)
         dropDownFeatures->addItem(efects[i]);

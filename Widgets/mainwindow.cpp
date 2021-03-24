@@ -2,6 +2,7 @@
 #include "wgtinputimage.h"
 #include "wgtoutputimage.h"
 #include "widgetcatalog.h"
+#include "Helpers/constants.h"
 
 #include <QSplitter>
 
@@ -14,8 +15,8 @@ void MainWindow::createUI()
     mainSplitter->addWidget(wgtCatalog);
 
     // middle column - input image
-    wgtInputImage1 = new WgtInputImage(this);
-    mainSplitter->addWidget(wgtInputImage1);
+    wgtInputImage = new WgtInputImage(this);
+    mainSplitter->addWidget(wgtInputImage);
 
 
     // right column - output image
@@ -24,9 +25,9 @@ void MainWindow::createUI()
 
 
 
-    mainSplitter->setStretchFactor(0, 2); // TODO: move to Settings
-    mainSplitter->setStretchFactor(1, 5);
-    mainSplitter->setStretchFactor(2, 5);
+    mainSplitter->setStretchFactor(0, Helpers::layoutProportions[0]);
+    mainSplitter->setStretchFactor(1, Helpers::layoutProportions[1]);
+    mainSplitter->setStretchFactor(2, Helpers::layoutProportions[2]);
 
 
     setCentralWidget(mainSplitter);

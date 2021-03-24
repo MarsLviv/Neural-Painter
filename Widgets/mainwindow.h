@@ -22,7 +22,7 @@ private:
     QSplitter * mainSplitter {nullptr};
 
     WidgetCatalog * wgtCatalog {nullptr};
-    WgtInputImage * wgtInputImage1 {nullptr};
+    WgtInputImage * wgtInputImage {nullptr};
     WgtOutputImage * wgtOutputImage {nullptr};
 };
 #endif // MAINWINDOW_H

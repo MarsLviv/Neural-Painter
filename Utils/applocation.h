@@ -1,6 +1,8 @@
 #ifndef APPLOCATION_H
 #define APPLOCATION_H
 
+#include "Helpers/constants.h"
+
 namespace Utils {
 
     class AppLocation
@@ -19,8 +21,8 @@ namespace Utils {
 
 
     private:
-        const static int appWidthDefault = 1300;    // TODO: move to settings
-        const static int appHeightDefault = 800;
+        const static int appWidthDefault = Helpers::appWidthDefault;
+        const static int appHeightDefault = Helpers::appHeightDefault;
     };
 
 };

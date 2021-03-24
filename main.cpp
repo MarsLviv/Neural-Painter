@@ -1,8 +1,10 @@
 #include <QApplication>
 #include <QScreen>
 
-#include "UI/mainwindow.h"
+#include "Widgets/mainwindow.h"
 #include "Utils/applocation.h"
+#include "Helpers/constants.h"
+#include <Controller/controller.h>
 
 int main(int argc, char *argv[])
 {
@@ -14,12 +16,13 @@ int main(int argc, char *argv[])
     w.setMinimumWidth(Utils::AppLocation::appMinWidth);
     w.setMinimumHeight(Utils::AppLocation::appMinHeight);
 
-    w.setWindowTitle("Painter v 0.1");                              // TODO: move to separate file
+    w.setWindowTitle(Helpers::appName);
 
     // run thread_1 to load Networks
     // run thread_2 to hanle Conversion
 
     // make Controller object and run it in separate thread_3 (handle user activity - Buttons, Dropdown menu)
+    Controller controller;
 
     w.show();
 
