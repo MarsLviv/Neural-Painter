@@ -18,6 +18,11 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+    void setInputImage(QString &fileName);
+    QImage * getInputImage();
+
+    void setOutputImage(QString &fileName);
+    QImage * getOutputImage();
 private:
     QSplitter * mainSplitter {nullptr};
 

@@ -43,3 +43,13 @@ WgtOutputImage::WgtOutputImage(QWidget *parent) : QScrollArea(parent)
 
     this->setLayout(mainLayout);
 }
+
+void WgtOutputImage::setImage(QString &fileName)
+{
+    outputImage->setImage(fileName);
+}
+
+QImage *WgtOutputImage::getImage()
+{
+    return outputImage->getImage();
+}

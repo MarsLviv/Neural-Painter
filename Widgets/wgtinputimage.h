@@ -16,7 +16,8 @@ class WgtInputImage : public QScrollArea
 public:
     WgtInputImage(QWidget *parent);
 
-
+    void setImage(QString &fileName);
+    QImage * getImage();
 private:
     QVBoxLayout * mainLayout {nullptr};
 

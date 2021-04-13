@@ -52,6 +52,11 @@ void WgtImage::setImage(QString &fileName)
     setPixmap();
 }
 
+QImage *WgtImage::getImage()
+{
+    return image;
+}
+
 void WgtImage::setPixmap()
 {
     inputPictureLabel->setPixmap(QPixmap::fromImage(*image).scaled(this->width(), this->height(), Qt::KeepAspectRatio));

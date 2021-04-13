@@ -13,6 +13,8 @@ public:
     WgtImage(QWidget *parent = nullptr);
 
     void setImage(QString &fileName);
+    QImage * getImage();
+
     void setPixmap();
 
 protected:

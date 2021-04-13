@@ -3,6 +3,7 @@
 
 #include "Widgets/mainwindow.h"
 #include "Utils/applocation.h"
+#include "Utils/utilspicture.h"
 #include "Helpers/constants.h"
 #include <Controller/controller.h>
 
@@ -25,6 +26,14 @@ int main(int argc, char *argv[])
     Controller controller;
 
     w.show();
+    // test setImage getImage methods
+//    auto pictureFile = Utils::randomPictureName();
+//    pictureFile = ":/LvivLarge1.jpg";
+//    pictureFile = ":/Lviv1.jpg";
+//    w.setInputImage(pictureFile);
+//    pictureFile = ":/Lviv3.jpg";
+//    w.setOutputImage(pictureFile);
+    // </> test setImage getImage methods
 
     // thread_1.join()
     // thread_2.join()

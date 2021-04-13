@@ -43,7 +43,25 @@ MainWindow::~MainWindow()
 
 }
 
+void MainWindow::setInputImage(QString &fileName)
+{
+    wgtInputImage->setImage(fileName);
+}
 
+QImage *MainWindow::getInputImage()
+{
+    return wgtInputImage->getImage();
+}
+
+void MainWindow::setOutputImage(QString &fileName)
+{
+    wgtOutputImage->setImage(fileName);
+}
+
+QImage *MainWindow::getOutputImage()
+{
+    return wgtOutputImage->getImage();
+}
 
 
 
