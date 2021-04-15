@@ -23,6 +23,8 @@ public:
 
     void setOutputImage(QString &fileName);
     QImage * getOutputImage();
+
+    QString conversion() const;
 private:
     QSplitter * mainSplitter {nullptr};
 

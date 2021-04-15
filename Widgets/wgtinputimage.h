@@ -18,6 +18,8 @@ public:
 
     void setImage(QString &fileName);
     QImage * getImage();
+
+    QString conversion() const;
 private:
     QVBoxLayout * mainLayout {nullptr};
 

@@ -30,3 +30,8 @@ WgtDropDownFeatures::WgtDropDownFeatures(QWidget *parent) : QWidget(parent)
 
     this->setLayout(mainLayout);
 }
+
+QString WgtDropDownFeatures::conversion() const
+{
+    return dropDownFeatures->currentText();
+}

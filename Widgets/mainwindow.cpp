@@ -63,6 +63,11 @@ QImage *MainWindow::getOutputImage()
     return wgtOutputImage->getImage();
 }
 
+QString MainWindow::conversion() const
+{
+    return wgtInputImage->conversion();
+}
+
 
 
 

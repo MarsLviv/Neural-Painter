@@ -14,6 +14,7 @@ class WgtDropDownFeatures : public QWidget
 public:
     WgtDropDownFeatures(QWidget *parent = nullptr);
 
+    QString conversion() const;
 private:
     QHBoxLayout * mainLayout {nullptr};
 

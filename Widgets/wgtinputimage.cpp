@@ -53,3 +53,8 @@ QImage *WgtInputImage::getImage()
 {
     return inputImage->getImage();
 }
+
+QString WgtInputImage::comboBoxCurrentText() const
+{
+    return wgtDropDownFeatures->currentText();
+}

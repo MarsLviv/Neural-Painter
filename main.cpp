@@ -35,6 +35,14 @@ int main(int argc, char *argv[])
 //    w.setOutputImage(pictureFile);
     // </> test setImage getImage methods
 
+    QString fileName = "mirrored.jpg";
+    auto tempPath = QDir::tempPath() + QDir::separator() + fileName;
+
+    QImage *im = w.getInputImage();
+    QImage im_mirrored = im->mirrored(true, false);
+    im_mirrored.save(tempPath);
+    w.setOutputImage(tempPath);
+
     // thread_1.join()
     // thread_2.join()
     // thread_3.join()
