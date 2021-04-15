@@ -3,17 +3,21 @@
 
 #include <QObject>
 
+#include "../Widgets/mainwindow.h"
+
 class Controller : QObject
 {
     Q_OBJECT
 
 public:
-    Controller(QImage *inputImage, QImage *outputImage, QString conversion, QObject *parent = nullptr);
+    Controller(MainWindow *mainWindow, QObject *parent = nullptr);
 private:
-    QImage *inputImage {nullptr};
-    QImage *outputImage {nullptr};
+    QImage * inputImage {nullptr};
+    QImage * outputImage {nullptr};
 
     QString conversion;
+
+    MainWindow * mainWindow {nullptr};
 };
 
 #endif // CONTROLLER_H
