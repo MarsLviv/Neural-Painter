@@ -10,6 +10,9 @@ CONFIG += c++17
 
 SOURCES += \
     Controller/controller.cpp \
+    Conversion/grayscaleconverter.cpp \
+    Conversion/imageconverter.cpp \
+    Conversion/mirrorconverter.cpp \
     Widgets/mainwindow.cpp \
     Widgets/wgtdropdownfeatures.cpp \
     Widgets/wgtimage.cpp \
@@ -21,7 +24,9 @@ SOURCES += \
 
 HEADERS += \
     Controller/controller.h \
+    Conversion/grayscaleconverter.h \
     Conversion/imageconverter.h \
+    Conversion/mirrorconverter.h \
     Helpers/constants.h \
     Utils/utilspicture.h \
     Utils/applocation.h \

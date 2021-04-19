@@ -3,16 +3,16 @@
 
 #include<QObject>
 
-
-class ImageConverter : QObject
+class ImageConverter : public QObject
 {
     Q_OBJECT
 
 public:
     ImageConverter(QObject *parentt = nullptr);
-    //virtual ~ImageConverter();
+    virtual ~ImageConverter();
 
-    //virtual void Convert(QImage &);
+    virtual QString Convert(QImage *) = 0;
+
 };
 
 #endif // IMAGECONVERTER_H

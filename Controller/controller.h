@@ -4,6 +4,7 @@
 #include <QObject>
 
 #include "../Widgets/mainwindow.h"
+#include "../Conversion/imageconverter.h"
 
 class Controller : QObject
 {
@@ -18,6 +19,8 @@ private:
     QString conversion;
 
     MainWindow * mainWindow {nullptr};
+
+    ImageConverter * imageConverter {nullptr};
 };
 
 #endif // CONTROLLER_H

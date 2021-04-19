@@ -7,7 +7,7 @@
 
 WgtDropDownFeatures::WgtDropDownFeatures(QWidget *parent) : QWidget(parent)
 {
-    QStringList efects = {"Mirror", "Night", "Colorization", "Google Deep Dream"};// TODO: move to settings / other class
+    QStringList efects = {"Mirror", "Grayscale", "Colorization", "Google Deep Dream"};// TODO: move to settings / other class
 
     mainLayout = new QHBoxLayout(this);
 
