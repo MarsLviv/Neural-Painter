@@ -10,11 +10,6 @@ GrayscaleConverter::GrayscaleConverter(QObject *parent) : ImageConverter(parent)
 
 }
 
-GrayscaleConverter::~GrayscaleConverter()
-{
-
-}
-
 QString GrayscaleConverter::convert(QImage *image)
 {
     auto secondsSinceEpoch = QDateTime::currentMSecsSinceEpoch();
@@ -24,14 +19,4 @@ QString GrayscaleConverter::convert(QImage *image)
 
     return tempPath;
 
-}
-
-QString GrayscaleConverter::name()
-{
-    return conversionName;
-}
-
-Conversions GrayscaleConverter::itemValue()
-{
-    return Conversions::GRAYSCALE;
 }

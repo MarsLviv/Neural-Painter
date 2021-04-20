@@ -7,6 +7,7 @@
 //#include "../Conversion/imageconverter.h"
 
 class ImageConverter;
+class ImageConverterInfo;
 
 enum class Conversions {MIRROR, GRAYSCALE, COLORIZATION, GOOGLE_DEEP_DREAM};
 
@@ -18,11 +19,11 @@ public:
     Controller(MainWindow *mainWindow);
     ~Controller();
 
-    QVector<ImageConverter *> getConversionInstances() const;
+    QVector<ImageConverterInfo *> getConversionInfo() const;
 
 private:
     ImageConverter * makeConverter(Conversions);
-
+    ImageConverterInfo * makeConverterInfo(QString name, Conversions conversions);
 private:
 
     QImage * inputImage {nullptr};
@@ -34,7 +35,7 @@ private:
 
     ImageConverter * imageConverter {nullptr};
 
-    QVector<ImageConverter *> conversionInstances;
+    QVector<ImageConverterInfo *> imageConverterInfo;
 };
 
 #endif // CONTROLLER_H

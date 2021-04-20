@@ -10,10 +10,10 @@ Controller::Controller(MainWindow *mainWindow)
     : QObject(nullptr)
     , mainWindow(mainWindow)
 {
-    conversionInstances.append(makeConverter(Conversions::MIRROR));
-    conversionInstances.append(makeConverter(Conversions::GRAYSCALE));
+    imageConverterInfo.append(makeConverterInfo("Mirror", Conversions::MIRROR));
+    imageConverterInfo.append(makeConverterInfo("Grayscale", Conversions::GRAYSCALE));
 
-    imageConverter = conversionInstances[0];
+    imageConverter = makeConverter(Conversions::MIRROR);
     auto convertedImagePath = imageConverter->convert(mainWindow->getInputImage());
     mainWindow->setOutputImage(convertedImagePath);
 
@@ -22,8 +22,8 @@ Controller::Controller(MainWindow *mainWindow)
 
 Controller::~Controller()
 {
-    for(auto conversionInstance: conversionInstances)
-        delete conversionInstance;
+    for(auto _imageConverterInfo: imageConverterInfo)
+        delete _imageConverterInfo;
 }
 
 ImageConverter *Controller::makeConverter(Conversions conversions)
@@ -40,8 +40,13 @@ ImageConverter *Controller::makeConverter(Conversions conversions)
     }
 }
 
-QVector<ImageConverter *> Controller::getConversionInstances() const
+ImageConverterInfo *Controller::makeConverterInfo(QString name, Conversions conversions)
 {
-    return conversionInstances;
+    return new ImageConverterInfo(name, conversions);
+}
+
+QVector<ImageConverterInfo *> Controller::getConversionInfo() const
+{
+    return imageConverterInfo;
 }
 

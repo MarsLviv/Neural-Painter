@@ -10,11 +10,6 @@ MirrorConverter::MirrorConverter(QObject *parent) : ImageConverter(parent)
 
 }
 
-MirrorConverter::~MirrorConverter()
-{
-
-}
-
 QString MirrorConverter::convert(QImage * image)
 {
     auto secondsSinceEpoch = QDateTime::currentMSecsSinceEpoch();
@@ -25,12 +20,3 @@ QString MirrorConverter::convert(QImage * image)
     return tempPath;
 }
 
-QString MirrorConverter::name()
-{
-    return conversionName;
-}
-
-Conversions MirrorConverter::itemValue()
-{
-    return Conversions::MIRROR;
-}

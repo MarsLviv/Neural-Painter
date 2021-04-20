@@ -5,7 +5,7 @@
 
 #include<QObject>
 
-//enum class Conversions;
+class ImageConverterInfo;
 
 class ImageConverter : public QObject
 {
@@ -13,11 +13,25 @@ class ImageConverter : public QObject
 
 public:
     ImageConverter(QObject *parentt = nullptr);
-    virtual ~ImageConverter();
+    virtual ~ImageConverter() = default;
 
     virtual QString convert(QImage *) = 0;
-    virtual QString name() = 0;
-    virtual Conversions itemValue() = 0;    // for Combobox
+    QString name();
+    Conversions itemValue();    // for Combobox
+
+    ImageConverterInfo *imageConverterInfo;
+};
+
+class ImageConverterInfo
+{
+public:
+    ImageConverterInfo(QString name, Conversions conversions);
+
+    QString name();
+    Conversions itemValue();    // for Combobox
+private:
+    QString _name;
+    Conversions _itemValue;
 };
 
 #endif // IMAGECONVERTER_H

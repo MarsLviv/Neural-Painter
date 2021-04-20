@@ -4,6 +4,7 @@
 #include<QWidget>
 
 class ImageConverter;
+class ImageConverterInfo;
 class Controller;
 
 class QLabel;
@@ -19,7 +20,7 @@ public:
 
     QString conversion() const;
 
-    void addItemToCombobox(ImageConverter *);
+    void addItemToCombobox(ImageConverterInfo *imageConverterInfo);
     void deliverController(Controller *);
 private:
     QHBoxLayout * mainLayout {nullptr};

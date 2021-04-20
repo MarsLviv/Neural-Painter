@@ -38,13 +38,13 @@ QString WgtDropDownFeatures::conversion() const
     return dropDownFeatures->currentText();
 }
 
-void WgtDropDownFeatures::addItemToCombobox(ImageConverter * imageConverter)
+void WgtDropDownFeatures::addItemToCombobox(ImageConverterInfo * imageConverterInfo)
 {
-    dropDownFeatures->addItem(imageConverter->name(), static_cast<int>(imageConverter->itemValue()));
+    dropDownFeatures->addItem(imageConverterInfo->name(), static_cast<int>(imageConverterInfo->itemValue()));
 }
 
 void WgtDropDownFeatures::deliverController(Controller * controller)
 {
-    for(const auto converter: controller->getConversionInstances())
+    for(const auto converter: controller->getConversionInfo())
         addItemToCombobox(converter);
 }

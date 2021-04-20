@@ -7,11 +7,10 @@ class GrayscaleConverter : public ImageConverter
 {
 public:
     GrayscaleConverter(QObject *parentt = nullptr);
-    virtual ~GrayscaleConverter();
+    virtual ~GrayscaleConverter() = default;
 
     virtual QString convert(QImage *) override;
-    virtual QString name() override;
-    virtual Conversions itemValue() override;    // for Combobox
+
 public:
     const QString conversionName = "Grayscale";
 };
