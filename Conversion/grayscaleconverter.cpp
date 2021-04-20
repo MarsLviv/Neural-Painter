@@ -1,4 +1,5 @@
 #include "grayscaleconverter.h"
+#include "Controller/controller.h"
 
 #include <QDateTime>
 #include <QImage>
@@ -14,13 +15,23 @@ GrayscaleConverter::~GrayscaleConverter()
 
 }
 
-QString GrayscaleConverter::Convert(QImage *image)
+QString GrayscaleConverter::convert(QImage *image)
 {
     auto secondsSinceEpoch = QDateTime::currentMSecsSinceEpoch();
-    QString fileName = conversionName + QString::number(secondsSinceEpoch) + ".jpg";
+    QString fileName = conversionName.simplified().remove(' ') + QString::number(secondsSinceEpoch) + ".jpg";
     auto tempPath = QDir::tempPath() + QDir::separator() + fileName;
     image->convertToFormat(QImage::Format_Grayscale8).save(tempPath);
 
     return tempPath;
 
+}
+
+QString GrayscaleConverter::name()
+{
+    return conversionName;
+}
+
+Conversions GrayscaleConverter::itemValue()
+{
+    return Conversions::GRAYSCALE;
 }

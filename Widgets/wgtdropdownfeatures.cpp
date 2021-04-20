@@ -1,5 +1,6 @@
 #include "wgtdropdownfeatures.h"
 #include "Helpers/constants.h"
+#include "Conversion/imageconverter.h"
 
 #include<QLabel>
 #include<QHBoxLayout>
@@ -7,7 +8,7 @@
 
 WgtDropDownFeatures::WgtDropDownFeatures(QWidget *parent) : QWidget(parent)
 {
-    QStringList efects = {"Mirror", "Grayscale", "Colorization", "Google Deep Dream"};// TODO: move to settings / other class
+    //QStringList efects = {"Mirror", "Grayscale", "Colorization", "Google Deep Dream"};// TODO: move to settings / other class
 
     mainLayout = new QHBoxLayout(this);
 
@@ -22,8 +23,9 @@ WgtDropDownFeatures::WgtDropDownFeatures(QWidget *parent) : QWidget(parent)
                                     " font : Times New Roman;  font-size: 24px; "
                                     " color : black;  }");*/
 
-    for (int i = 0; i < efects.size(); ++i)
-        dropDownFeatures->addItem(efects[i]);
+
+//    for (int i = 0; i < efects.size(); ++i)
+//        dropDownFeatures->addItem(efects[i]);
 
     mainLayout->addWidget(dropDownFeatures);
     mainLayout->setContentsMargins(0, 0, 0, 0);
@@ -32,6 +34,17 @@ WgtDropDownFeatures::WgtDropDownFeatures(QWidget *parent) : QWidget(parent)
 }
 
 QString WgtDropDownFeatures::conversion() const
-{
+{           //dropDownFeatures->currentIndex();
     return dropDownFeatures->currentText();
+}
+
+void WgtDropDownFeatures::addItemToCombobox(ImageConverter * imageConverter)
+{
+    dropDownFeatures->addItem(imageConverter->name(), static_cast<int>(imageConverter->itemValue()));
+}
+
+void WgtDropDownFeatures::deliverController(Controller * controller)
+{
+    for(const auto converter: controller->getConversionInstances())
+        addItemToCombobox(converter);
 }

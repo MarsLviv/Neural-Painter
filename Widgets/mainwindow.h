@@ -3,6 +3,8 @@
 
 #include <QMainWindow>
 
+class Controller;
+
 class WidgetCatalog;
 class WgtInputImage;
 class WgtOutputImage;
@@ -25,6 +27,8 @@ public:
     QImage * getOutputImage();
 
     QString conversion() const;
+
+    void deliverController(Controller *controller);
 private:
     QSplitter * mainSplitter {nullptr};
 

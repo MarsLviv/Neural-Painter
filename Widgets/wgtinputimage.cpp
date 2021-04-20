@@ -58,3 +58,8 @@ QString WgtInputImage::conversion() const
 {
     return wgtDropDownFeatures->conversion();
 }
+
+void WgtInputImage::deliverController(Controller * controller)
+{
+    wgtDropDownFeatures->deliverController(controller);
+}

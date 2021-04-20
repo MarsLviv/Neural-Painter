@@ -3,6 +3,9 @@
 
 #include<QWidget>
 
+class ImageConverter;
+class Controller;
+
 class QLabel;
 class QHBoxLayout;
 class QComboBox;
@@ -15,6 +18,9 @@ public:
     WgtDropDownFeatures(QWidget *parent = nullptr);
 
     QString conversion() const;
+
+    void addItemToCombobox(ImageConverter *);
+    void deliverController(Controller *);
 private:
     QHBoxLayout * mainLayout {nullptr};
 

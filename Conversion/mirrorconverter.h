@@ -7,12 +7,14 @@ class MirrorConverter : public ImageConverter
 {
 public:
     MirrorConverter(QObject *parentt = nullptr);
-    /*virtual*/ ~MirrorConverter();
+    virtual ~MirrorConverter();
 
-    /*virtual*/ QString Convert(QImage *);
+    virtual QString convert(QImage *) override;
+    virtual QString name() override;
+    virtual Conversions itemValue() override;    // for Combobox
+public:
+    const QString conversionName = "Mirror";
 
-    QString simpleClassName = "MirrorConverter";
-    QString conversionName = "mirror";
 };
 
 #endif // MIRRORCONVERTER_H

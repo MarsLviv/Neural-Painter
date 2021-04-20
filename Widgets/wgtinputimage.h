@@ -3,6 +3,8 @@
 
 #include<QScrollArea>
 
+class Controller;
+
 class QVBoxLayout;
 class QPushButton;
 class QLabel;
@@ -20,6 +22,7 @@ public:
     QImage * getImage();
 
     QString conversion() const;
+    void deliverController(Controller *);
 private:
     QVBoxLayout * mainLayout {nullptr};
 

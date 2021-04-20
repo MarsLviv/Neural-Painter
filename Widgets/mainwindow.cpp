@@ -6,6 +6,16 @@
 
 #include <QSplitter>
 
+MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
+{
+    createUI();
+}
+
+MainWindow::~MainWindow()
+{
+
+}
+
 void MainWindow::createUI()
 {
     mainSplitter = new QSplitter(Qt::Horizontal, this);
@@ -33,16 +43,6 @@ void MainWindow::createUI()
     setCentralWidget(mainSplitter);
 }
 
-MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
-{
-    createUI();
-}
-
-MainWindow::~MainWindow()
-{
-
-}
-
 void MainWindow::setInputImage(QString &fileName)
 {
     wgtInputImage->setImage(fileName);
@@ -66,6 +66,11 @@ QImage *MainWindow::getOutputImage()
 QString MainWindow::conversion() const
 {
     return wgtInputImage->conversion();
+}
+
+void MainWindow::deliverController(Controller * controller)
+{
+    wgtInputImage->deliverController(controller);
 }
 
 

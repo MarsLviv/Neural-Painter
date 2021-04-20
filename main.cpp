@@ -28,7 +28,7 @@ int main(int argc, char *argv[])
     w.show();
 
     // make Controller object and run it in separate thread_3 (handle user activity - Buttons, Dropdown menu)
-    Controller controller(&w, &w);// who parent ?
+    Controller controller(&w);
 
 
 
