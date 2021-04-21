@@ -6,18 +6,17 @@
 #include "Conversion/mirrorconverter.h"
 #include "Conversion/grayscaleconverter.h"
 
-Controller::Controller(MainWindow *mainWindow)
+Controller::Controller()
     : QObject(nullptr)
-    , mainWindow(mainWindow)
 {
     imageConverterInfo.append(makeConverterInfo("Mirror", Conversions::MIRROR));
     imageConverterInfo.append(makeConverterInfo("Grayscale", Conversions::GRAYSCALE));
 
     imageConverter = makeConverter(Conversions::MIRROR);
-    auto convertedImagePath = imageConverter->convert(mainWindow->getInputImage());
-    mainWindow->setOutputImage(convertedImagePath);
+//    auto convertedImagePath = imageConverter->convert(mainWindow->getInputImage());
+//    mainWindow->setOutputImage(convertedImagePath);
 
-    mainWindow->deliverController(this);
+//    mainWindow->deliverController(this);
 }
 
 Controller::~Controller()
@@ -42,13 +41,18 @@ ImageConverter * Controller::makeConverter(Conversions conversion)
     }
 }
 
-ImageConverterInfo * Controller::makeConverterInfo(QString name, Conversions conversions)
+ImageConverterInfo * Controller::makeConverterInfo(QString name, Conversions conversion)
 {
-    return new ImageConverterInfo(name, conversions);
+    return new ImageConverterInfo(name, conversion);
 }
 
 QVector<ImageConverterInfo *> Controller::getConversionInfo() const
 {
     return imageConverterInfo;
+}
+
+ImageConverter * Controller::getConversion() const
+{
+    return imageConverter;
 }
 

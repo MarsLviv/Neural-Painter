@@ -10,28 +10,25 @@
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    MainWindow w;
+    MainWindow mainWindow;
 
     Utils::AppLocation::calculateAppGeometry();
-    w.move(Utils::AppLocation::appMoveOnX, Utils::AppLocation::appMoveOnY);       // move App to screen center
-    w.setMinimumWidth(Utils::AppLocation::appMinWidth);
-    w.setMinimumHeight(Utils::AppLocation::appMinHeight);
+    mainWindow.move(Utils::AppLocation::appMoveOnX, Utils::AppLocation::appMoveOnY);       // move App to screen center
+    mainWindow.setMinimumWidth(Utils::AppLocation::appMinWidth);
+    mainWindow.setMinimumHeight(Utils::AppLocation::appMinHeight);
 
-    w.setWindowTitle(Helpers::appName);
+    mainWindow.setWindowTitle(Helpers::appName);
 
     // run thread_1 to load Networks
     // run thread_2 to hanle Conversion
 
 
-
-
-    w.show();
-
     // make Controller object and run it in separate thread_3 (handle user activity - Buttons, Dropdown menu)
-    Controller controller(&w);
+    Controller controller;
+    mainWindow.setController(&controller);
+    mainWindow.setInitialState();
 
-
-
+    mainWindow.show();
 
 
     // thread_1.join()

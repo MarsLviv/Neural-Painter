@@ -59,7 +59,12 @@ QString WgtInputImage::conversion() const
     return wgtDropDownFeatures->conversion();
 }
 
-void WgtInputImage::deliverController(Controller * controller)
+//void WgtInputImage::deliverController(Controller * controller)
+//{
+//    wgtDropDownFeatures->deliverController(controller);
+//}
+
+void WgtInputImage::addItemToCombobox(ImageConverterInfo *imageConverterInfo)
 {
-    wgtDropDownFeatures->deliverController(controller);
+    wgtDropDownFeatures->addItemToCombobox(imageConverterInfo);
 }

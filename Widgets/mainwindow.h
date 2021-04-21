@@ -4,6 +4,7 @@
 #include <QMainWindow>
 
 class Controller;
+class ImageConverterInfo;
 
 class WidgetCatalog;
 class WgtInputImage;
@@ -26,14 +27,21 @@ public:
     void setOutputImage(QString &fileName);
     QImage * getOutputImage();
 
-    QString conversion() const;
+    //QString conversion() const;
 
-    void deliverController(Controller *controller);
+    //void deliverController(Controller *controller);
+    void setController(Controller *controller);
+    void addItemToCombobox(ImageConverterInfo * imageConverterInfo);
+
+    void convert();
+    void setInitialState();
 private:
     QSplitter * mainSplitter {nullptr};
 
     WidgetCatalog * wgtCatalog {nullptr};
     WgtInputImage * wgtInputImage {nullptr};
     WgtOutputImage * wgtOutputImage {nullptr};
+
+    Controller * controller {nullptr};
 };
 #endif // MAINWINDOW_H

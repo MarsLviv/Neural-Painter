@@ -5,6 +5,8 @@
 
 class Controller;
 
+class ImageConverterInfo;
+
 class QVBoxLayout;
 class QPushButton;
 class QLabel;
@@ -22,7 +24,8 @@ public:
     QImage * getImage();
 
     QString conversion() const;
-    void deliverController(Controller *);
+    //void deliverController(Controller *);
+    void addItemToCombobox(ImageConverterInfo *imageConverterInfo);
 private:
     QVBoxLayout * mainLayout {nullptr};
 

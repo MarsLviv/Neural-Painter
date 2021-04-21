@@ -37,8 +37,8 @@ void WgtDropDownFeatures::addItemToCombobox(ImageConverterInfo * imageConverterI
     dropDownFeatures->addItem(imageConverterInfo->name(), static_cast<int>(imageConverterInfo->itemValue()));
 }
 
-void WgtDropDownFeatures::deliverController(Controller * controller)
-{
-    for(const auto converterInfo: controller->getConversionInfo())
-        addItemToCombobox(converterInfo);
-}
+//void WgtDropDownFeatures::deliverController(Controller * controller)
+//{
+//    for(const auto converterInfo: controller->getConversionInfo())
+//        addItemToCombobox(converterInfo);
+//}

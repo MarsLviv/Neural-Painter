@@ -21,7 +21,7 @@ public:
     QString conversion() const;
 
     void addItemToCombobox(ImageConverterInfo *imageConverterInfo);
-    void deliverController(Controller *);
+    //void deliverController(Controller *);
 private:
     QHBoxLayout * mainLayout {nullptr};
 

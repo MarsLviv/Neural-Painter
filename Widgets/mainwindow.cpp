@@ -3,6 +3,7 @@
 #include "wgtoutputimage.h"
 #include "widgetcatalog.h"
 #include "Helpers/constants.h"
+#include "Conversion/imageconverter.h"
 
 #include <QSplitter>
 
@@ -63,14 +64,38 @@ QImage *MainWindow::getOutputImage()
     return wgtOutputImage->getImage();
 }
 
-QString MainWindow::conversion() const
+//QString MainWindow::conversion() const
+//{
+//    return wgtInputImage->conversion();
+//}
+
+//void MainWindow::deliverController(Controller * controller)
+//{
+//    wgtInputImage->deliverController(controller);
+//}
+
+void MainWindow::setController(Controller *controller)
 {
-    return wgtInputImage->conversion();
+    this->controller = controller;
 }
 
-void MainWindow::deliverController(Controller * controller)
+void MainWindow::addItemToCombobox(ImageConverterInfo *imageConverterInfo)
 {
-    wgtInputImage->deliverController(controller);
+    wgtInputImage->addItemToCombobox(imageConverterInfo);
+}
+
+void MainWindow::convert()
+{
+    auto convertedImagePath = controller->getConversion()->convert(getInputImage());
+    setOutputImage(convertedImagePath);
+}
+
+void MainWindow::setInitialState()
+{
+    for(const auto converterInfo: controller->getConversionInfo())
+        addItemToCombobox(converterInfo);
+
+    convert();
 }
 
 

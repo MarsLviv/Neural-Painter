@@ -15,19 +15,17 @@ class Controller : QObject
     Q_OBJECT
 
 public:
-    Controller(MainWindow *mainWindow);
+    Controller();
     ~Controller();
 
     QVector<ImageConverterInfo *> getConversionInfo() const;
-
+    ImageConverter * getConversion() const;
 private:
     ImageConverter * makeConverter(Conversions);
     ImageConverterInfo * makeConverterInfo(QString name, Conversions conversion);
 private:
     QImage * inputImage {nullptr};
     QImage * outputImage {nullptr};
-
-    MainWindow * mainWindow {nullptr};
 
     ImageConverter * imageConverter {nullptr};
 
