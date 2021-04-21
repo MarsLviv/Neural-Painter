@@ -15,7 +15,7 @@ Conversions ImageConverter::itemValue()
     return imageConverterInfo->itemValue();
 }
 
-ImageConverterInfo::ImageConverterInfo(QString name, Conversions conversions) : _name(name), _itemValue(conversions)
+ImageConverterInfo::ImageConverterInfo(QString name, Conversions conversion) : _name(name), _itemValue(conversion)
 {
 
 }

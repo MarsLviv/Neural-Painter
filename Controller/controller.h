@@ -4,7 +4,6 @@
 #include <QObject>
 
 #include "../Widgets/mainwindow.h"
-//#include "../Conversion/imageconverter.h"
 
 class ImageConverter;
 class ImageConverterInfo;
@@ -23,13 +22,10 @@ public:
 
 private:
     ImageConverter * makeConverter(Conversions);
-    ImageConverterInfo * makeConverterInfo(QString name, Conversions conversions);
+    ImageConverterInfo * makeConverterInfo(QString name, Conversions conversion);
 private:
-
     QImage * inputImage {nullptr};
     QImage * outputImage {nullptr};
-
-    QString conversion;
 
     MainWindow * mainWindow {nullptr};
 

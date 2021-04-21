@@ -8,8 +8,6 @@
 
 WgtDropDownFeatures::WgtDropDownFeatures(QWidget *parent) : QWidget(parent)
 {
-    //QStringList efects = {"Mirror", "Grayscale", "Colorization", "Google Deep Dream"};// TODO: move to settings / other class
-
     mainLayout = new QHBoxLayout(this);
 
     title = new QLabel(Helpers::titleDropdownMenuLabel, this);
@@ -22,10 +20,6 @@ WgtDropDownFeatures::WgtDropDownFeatures(QWidget *parent) : QWidget(parent)
     /*dropDownFeatures->setStyleSheet("QComboBox {    background-color : grey; "
                                     " font : Times New Roman;  font-size: 24px; "
                                     " color : black;  }");*/
-
-
-//    for (int i = 0; i < efects.size(); ++i)
-//        dropDownFeatures->addItem(efects[i]);
 
     mainLayout->addWidget(dropDownFeatures);
     mainLayout->setContentsMargins(0, 0, 0, 0);
@@ -45,6 +39,6 @@ void WgtDropDownFeatures::addItemToCombobox(ImageConverterInfo * imageConverterI
 
 void WgtDropDownFeatures::deliverController(Controller * controller)
 {
-    for(const auto converter: controller->getConversionInfo())
-        addItemToCombobox(converter);
+    for(const auto converterInfo: controller->getConversionInfo())
+        addItemToCombobox(converterInfo);
 }

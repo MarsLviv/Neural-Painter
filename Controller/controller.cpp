@@ -24,11 +24,13 @@ Controller::~Controller()
 {
     for(auto _imageConverterInfo: imageConverterInfo)
         delete _imageConverterInfo;
+
+    delete imageConverter;
 }
 
-ImageConverter *Controller::makeConverter(Conversions conversions)
+ImageConverter * Controller::makeConverter(Conversions conversion)
 {
-    switch (conversions) {
+    switch (conversion) {
     case Conversions::MIRROR:
         return new MirrorConverter;
     case Conversions::GRAYSCALE:
@@ -40,7 +42,7 @@ ImageConverter *Controller::makeConverter(Conversions conversions)
     }
 }
 
-ImageConverterInfo *Controller::makeConverterInfo(QString name, Conversions conversions)
+ImageConverterInfo * Controller::makeConverterInfo(QString name, Conversions conversions)
 {
     return new ImageConverterInfo(name, conversions);
 }

@@ -16,6 +16,7 @@ public:
     virtual ~ImageConverter() = default;
 
     virtual QString convert(QImage *) = 0;
+
     QString name();
     Conversions itemValue();    // for Combobox
 
@@ -25,7 +26,7 @@ public:
 class ImageConverterInfo
 {
 public:
-    ImageConverterInfo(QString name, Conversions conversions);
+    ImageConverterInfo(QString name, Conversions conversion);
 
     QString name();
     Conversions itemValue();    // for Combobox
