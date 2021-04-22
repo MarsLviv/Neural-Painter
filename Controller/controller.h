@@ -6,7 +6,7 @@
 class ImageConverter;
 class ImageConverterInfo;
 
-enum class Conversions {MIRROR, GRAYSCALE, COLORIZATION, GOOGLE_DEEP_DREAM}; // conversion types 3
+enum class Conversions {MIRROR, GRAYSCALE, COLORIZATION, GOOGLE_DEEP_DREAM}; // conversion types 4
 
 class Controller : QObject
 {
