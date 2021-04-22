@@ -18,5 +18,4 @@ QString GrayscaleConverter::convert(QImage *image)
     image->convertToFormat(QImage::Format_Grayscale8).save(tempPath);
 
     return tempPath;
-
 }
