@@ -1,9 +1,10 @@
 #include "wgtinputimage.h"
-#include "Utils/utilspicture.h"
 #include "Widgets/wgtimage.h"
-#include "Widgets/wgtdropdownfeatures.h"
+#include "Utils/utilspicture.h"
 #include "Helpers/constants.h"
 #include "Conversion/imageconverter.h"
+#include "Widgets/wgtdropdownfeatures.h"
+#include "Widgets/mainwindow.h"
 
 #include <QPushButton>
 #include <QVBoxLayout>
@@ -47,30 +48,20 @@ WgtInputImage::WgtInputImage(QWidget *parent) : QScrollArea(parent)
     connect(convertBtn, &QPushButton::clicked, this, &WgtInputImage::onConvertButtonClick);
 }
 
-void WgtInputImage::setImage(QString &fileName)
+void WgtInputImage::setImage(QString &fileName) const
 {
     inputImage->setImage(fileName);
 }
 
-QImage *WgtInputImage::getImage()
+QImage *WgtInputImage::getImage() const
 {
     return inputImage->getImage();
-}
-
-QString WgtInputImage::conversion() const
-{
-    return wgtDropDownFeatures->conversion();
 }
 
 void WgtInputImage::setController(Controller *controller)
 {
     this->controller = controller;
 }
-
-//void WgtInputImage::deliverController(Controller * controller)
-//{
-//    wgtDropDownFeatures->deliverController(controller);
-//}
 
 void WgtInputImage::addItemToCombobox(ImageConverterInfo *imageConverterInfo)
 {
@@ -79,8 +70,8 @@ void WgtInputImage::addItemToCombobox(ImageConverterInfo *imageConverterInfo)
 
 void WgtInputImage::makeConversion(Conversions conversion)
 {
-    auto mainWindowPar = parent()->parent();                    // MainWindow is parent of QSplitter; QSplitter is parent of this
-    auto myParent = qobject_cast<MainWindow *>(mainWindowPar);
+    auto mainWindowPtr = parent()->parent();                    // MainWindow <- QSplitter <- WgtInputImage
+    auto myParent = qobject_cast<MainWindow *>(mainWindowPtr);
 
     auto converter = controller->makeConverter(conversion);
     auto convertedImagePath = converter->convert(getImage());

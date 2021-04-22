@@ -45,35 +45,26 @@ void MainWindow::createUI()
     setCentralWidget(mainSplitter);
 }
 
-void MainWindow::setInputImage(QString &fileName)
+void MainWindow::setInputImage(QString &fileName) const
 {
     wgtInputImage->setImage(fileName);
 }
 
-QImage *MainWindow::getInputImage()
+QImage *MainWindow::getInputImage() const
 {
     return wgtInputImage->getImage();
 }
 
-void MainWindow::setOutputImage(QString &fileName)
+void MainWindow::setOutputImage(QString &fileName) const
 {
     wgtOutputImage->setImage(fileName);
 }
 
-QImage *MainWindow::getOutputImage()
+QImage *MainWindow::getOutputImage() const
 {
     return wgtOutputImage->getImage();
 }
 
-//QString MainWindow::conversion() const
-//{
-//    return wgtInputImage->conversion();
-//}
-
-//void MainWindow::deliverController(Controller * controller)
-//{
-//    wgtInputImage->deliverController(controller);
-//}
 
 void MainWindow::setController(Controller *controller)
 {

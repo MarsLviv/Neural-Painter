@@ -3,12 +3,10 @@
 
 #include <QObject>
 
-#include "../Widgets/mainwindow.h"
-
 class ImageConverter;
 class ImageConverterInfo;
 
-enum class Conversions {MIRROR, GRAYSCALE, COLORIZATION, GOOGLE_DEEP_DREAM};
+enum class Conversions {MIRROR, GRAYSCALE, COLORIZATION, GOOGLE_DEEP_DREAM}; // conversion types
 
 class Controller : QObject
 {
@@ -19,16 +17,14 @@ public:
     ~Controller();
 
     QVector<ImageConverterInfo *> getConversionInfo() const;
+
     ImageConverter * getConversion() const;
-
     ImageConverter * makeConverter(Conversions);
-private:
 
+private:
     ImageConverterInfo * makeConverterInfo(QString name, Conversions conversion);
-private:
-    QImage * inputImage {nullptr};
-    QImage * outputImage {nullptr};
 
+private:
     ImageConverter * imageConverter {nullptr};
 
     QVector<ImageConverterInfo *> imageConverterInfo;

@@ -27,14 +27,9 @@ WgtDropDownFeatures::WgtDropDownFeatures(QWidget *parent) : QWidget(parent)
     this->setLayout(mainLayout);
 }
 
-QString WgtDropDownFeatures::conversion() const
-{
-    return dropDownFeatures->currentText();
-}
-
 int WgtDropDownFeatures::conversionIndex() const
 {
-    dropDownFeatures->currentIndex();
+    return dropDownFeatures->currentIndex();
 }
 
 void WgtDropDownFeatures::addItemToCombobox(ImageConverterInfo * imageConverterInfo)
@@ -42,8 +37,3 @@ void WgtDropDownFeatures::addItemToCombobox(ImageConverterInfo * imageConverterI
     dropDownFeatures->addItem(imageConverterInfo->name(), static_cast<int>(imageConverterInfo->itemValue()));
 }
 
-//void WgtDropDownFeatures::deliverController(Controller * controller)
-//{
-//    for(const auto converterInfo: controller->getConversionInfo())
-//        addItemToCombobox(converterInfo);
-//}

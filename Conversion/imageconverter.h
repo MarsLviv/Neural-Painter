@@ -17,8 +17,8 @@ public:
 
     virtual QString convert(QImage *) = 0;
 
-    QString name();
-    Conversions itemValue();    // for Combobox
+    QString name() const;
+    Conversions itemValue() const;
 
     ImageConverterInfo *imageConverterInfo;
 };
@@ -28,8 +28,8 @@ class ImageConverterInfo
 public:
     ImageConverterInfo(QString name, Conversions conversion);
 
-    QString name();
-    Conversions itemValue();    // for Combobox
+    QString name() const;
+    Conversions itemValue() const;
 private:
     QString _name;
     Conversions _itemValue;

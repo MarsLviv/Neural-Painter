@@ -5,12 +5,12 @@ ImageConverter::ImageConverter(QObject *parent) : QObject(parent)
 
 }
 
-QString ImageConverter::name()
+QString ImageConverter::name() const
 {
     return imageConverterInfo->name();
 }
 
-Conversions ImageConverter::itemValue()
+Conversions ImageConverter::itemValue() const
 {
     return imageConverterInfo->itemValue();
 }
@@ -20,12 +20,12 @@ ImageConverterInfo::ImageConverterInfo(QString name, Conversions conversion) : _
 
 }
 
-QString ImageConverterInfo::name()
+QString ImageConverterInfo::name() const
 {
     return _name;
 }
 
-Conversions ImageConverterInfo::itemValue()
+Conversions ImageConverterInfo::itemValue() const
 {
     return _itemValue;
 }

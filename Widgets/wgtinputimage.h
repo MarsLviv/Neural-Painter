@@ -3,17 +3,15 @@
 
 #include<QScrollArea>
 
+class WgtImage;
 class Controller;
-
 class ImageConverterInfo;
+class WgtDropDownFeatures;
+enum class Conversions;
 
 class QVBoxLayout;
 class QPushButton;
 class QLabel;
-
-class WgtImage;
-class WgtDropDownFeatures;
-enum class Conversions;
 
 class WgtInputImage : public QScrollArea
 {
@@ -21,11 +19,9 @@ class WgtInputImage : public QScrollArea
 public:
     WgtInputImage(QWidget *parent);
 
-    void setImage(QString &fileName);
-    QImage * getImage();
+    void setImage(QString &fileName) const;
+    QImage * getImage() const;
 
-    QString conversion() const;
-    //void deliverController(Controller *);
     void setController(Controller *controller);
     void addItemToCombobox(ImageConverterInfo *imageConverterInfo);
 
@@ -44,7 +40,6 @@ private:
     QPushButton * convertBtn {nullptr};
 
     Controller * controller {nullptr};
-
 };
 
 #endif // WGTINPUTIMAGE_H

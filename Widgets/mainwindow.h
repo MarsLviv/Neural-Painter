@@ -4,11 +4,11 @@
 #include <QMainWindow>
 
 class Controller;
-class ImageConverterInfo;
-
 class WidgetCatalog;
 class WgtInputImage;
 class WgtOutputImage;
+class ImageConverterInfo;
+
 class QSplitter;
 
 class MainWindow : public QMainWindow
@@ -21,18 +21,14 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
-    void setInputImage(QString &fileName);
-    QImage * getInputImage();
+    void setInputImage(QString &fileName) const;
+    QImage * getInputImage() const;
 
-    void setOutputImage(QString &fileName);
-    QImage * getOutputImage();
+    void setOutputImage(QString &fileName) const;
+    QImage * getOutputImage() const;
 
-    //QString conversion() const;
-
-    //void deliverController(Controller *controller);
     void setController(Controller *controller);
     void addItemToCombobox(ImageConverterInfo * imageConverterInfo);
-
     void convert();
     void setInitialState();
 private:
