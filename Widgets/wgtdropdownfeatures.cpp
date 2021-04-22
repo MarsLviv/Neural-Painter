@@ -28,8 +28,13 @@ WgtDropDownFeatures::WgtDropDownFeatures(QWidget *parent) : QWidget(parent)
 }
 
 QString WgtDropDownFeatures::conversion() const
-{           //dropDownFeatures->currentIndex();
+{
     return dropDownFeatures->currentText();
+}
+
+int WgtDropDownFeatures::conversionIndex() const
+{
+    dropDownFeatures->currentIndex();
 }
 
 void WgtDropDownFeatures::addItemToCombobox(ImageConverterInfo * imageConverterInfo)

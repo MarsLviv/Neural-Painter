@@ -6,6 +6,7 @@
 #include "Conversion/imageconverter.h"
 
 #include <QSplitter>
+#include <QDebug>
 
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
 {
@@ -77,6 +78,7 @@ QImage *MainWindow::getOutputImage()
 void MainWindow::setController(Controller *controller)
 {
     this->controller = controller;
+    wgtInputImage->setController(controller);
 }
 
 void MainWindow::addItemToCombobox(ImageConverterInfo *imageConverterInfo)

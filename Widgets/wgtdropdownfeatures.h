@@ -19,6 +19,7 @@ public:
     WgtDropDownFeatures(QWidget *parent = nullptr);
 
     QString conversion() const;
+    int conversionIndex() const;
 
     void addItemToCombobox(ImageConverterInfo *imageConverterInfo);
     //void deliverController(Controller *);

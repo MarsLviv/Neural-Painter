@@ -1,22 +1,16 @@
 #include "controller.h"
+#include "Conversion/mirrorconverter.h"
+#include "Conversion/grayscaleconverter.h"
 
 #include <QDir>
 #include <QImage>
 
-#include "Conversion/mirrorconverter.h"
-#include "Conversion/grayscaleconverter.h"
-
-Controller::Controller()
-    : QObject(nullptr)
+Controller::Controller() : QObject(nullptr)
 {
     imageConverterInfo.append(makeConverterInfo("Mirror", Conversions::MIRROR));
     imageConverterInfo.append(makeConverterInfo("Grayscale", Conversions::GRAYSCALE));
 
     imageConverter = makeConverter(Conversions::MIRROR);
-//    auto convertedImagePath = imageConverter->convert(mainWindow->getInputImage());
-//    mainWindow->setOutputImage(convertedImagePath);
-
-//    mainWindow->deliverController(this);
 }
 
 Controller::~Controller()

@@ -20,8 +20,10 @@ public:
 
     QVector<ImageConverterInfo *> getConversionInfo() const;
     ImageConverter * getConversion() const;
-private:
+
     ImageConverter * makeConverter(Conversions);
+private:
+
     ImageConverterInfo * makeConverterInfo(QString name, Conversions conversion);
 private:
     QImage * inputImage {nullptr};

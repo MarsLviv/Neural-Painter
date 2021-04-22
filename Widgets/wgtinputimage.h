@@ -13,6 +13,7 @@ class QLabel;
 
 class WgtImage;
 class WgtDropDownFeatures;
+enum class Conversions;
 
 class WgtInputImage : public QScrollArea
 {
@@ -25,7 +26,15 @@ public:
 
     QString conversion() const;
     //void deliverController(Controller *);
+    void setController(Controller *controller);
     void addItemToCombobox(ImageConverterInfo *imageConverterInfo);
+
+private:
+    void makeConversion(Conversions conversion);
+
+private slots:
+        void onConvertButtonClick();
+
 private:
     QVBoxLayout * mainLayout {nullptr};
 
@@ -33,6 +42,9 @@ private:
     WgtImage * inputImage {nullptr};
     WgtDropDownFeatures * wgtDropDownFeatures {nullptr};
     QPushButton * convertBtn {nullptr};
+
+    Controller * controller {nullptr};
+
 };
 
 #endif // WGTINPUTIMAGE_H
