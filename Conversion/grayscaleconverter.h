@@ -9,7 +9,7 @@ public:
     GrayscaleConverter(QObject *parentt = nullptr);
     virtual ~GrayscaleConverter() = default;
 
-    virtual QString convert(QImage *) override;
+    QString convert(QImage *) override;
 
 public:
     const QString conversionName = "Grayscale";

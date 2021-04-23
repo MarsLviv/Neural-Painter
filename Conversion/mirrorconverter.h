@@ -9,7 +9,7 @@ public:
     MirrorConverter(QObject *parentt = nullptr);
     virtual ~MirrorConverter() = default;
 
-    virtual QString convert(QImage *) override;
+    QString convert(QImage *) override;
 
 public:
     const QString conversionName = "Mirror";
