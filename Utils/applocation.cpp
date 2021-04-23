@@ -2,6 +2,7 @@
 
 #include <QApplication>
 #include <QScreen>
+
 namespace Utils {
 
     int AppLocation::appMinWidth;

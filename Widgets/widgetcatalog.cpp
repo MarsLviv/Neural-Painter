@@ -36,6 +36,11 @@ WidgetCatalog::WidgetCatalog(QWidget *parent) : QWidget(parent)
     connect(dirView, &QTreeView::expanded, this, &WidgetCatalog::onTreeViewClicked);
 }
 
+bool WidgetCatalog::event(QEvent *event)
+{
+    return QWidget::event(event);
+}
+
 void WidgetCatalog::onTreeViewClicked(const QModelIndex &index)
 {
     qDebug() << "onTreeViewClicked";

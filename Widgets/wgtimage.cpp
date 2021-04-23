@@ -9,6 +9,8 @@
 #include <QLabel>
 #include <QDir>
 
+#include "Helpers/constants.h"
+
 WgtImage::WgtImage(QWidget *parent) : QScrollArea(parent)
 {
     inputPictureLabel = new QLabel(this);
@@ -37,7 +39,7 @@ void WgtImage::setImage(QString &fileName)
     {
         QMessageBox::information(this,
                                  QGuiApplication::applicationDisplayName(),
-                                 tr("Cannot load %1: %2")
+                                 Helpers::titleErrorMessage
                                  .arg(QDir::toNativeSeparators(fileName), reader.errorString()));
         return;
     }
@@ -48,6 +50,11 @@ void WgtImage::setImage(QString &fileName)
         return;
     }
     setPixmap();
+}
+
+QImage *WgtImage::getImage()
+{
+    return image;
 }
 
 void WgtImage::setPixmap()
@@ -62,3 +69,4 @@ void WgtImage::resizeEvent(QResizeEvent *event)
 
     QWidget::resizeEvent(event);
 }
+

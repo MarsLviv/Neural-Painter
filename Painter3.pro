@@ -9,24 +9,33 @@ CONFIG += c++17
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    Controller/controller.cpp \
+    Conversion/grayscaleconverter.cpp \
+    Conversion/imageconverter.cpp \
+    Conversion/mirrorconverter.cpp \
+    Widgets/mainwindow.cpp \
+    Widgets/wgtdropdownfeatures.cpp \
+    Widgets/wgtimage.cpp \
+    Widgets/wgtinputimage.cpp \
+    Widgets/wgtoutputimage.cpp \
+    Widgets/widgetcatalog.cpp \
     main.cpp \
-    Utils/applocation.cpp \
-    UI/mainwindow.cpp \
-    UI/wgtdropdownfeatures.cpp \
-    UI/wgtimage.cpp \
-    UI/wgtinputimage.cpp \
-    UI/wgtoutputimage.cpp \
-    UI/widgetcatalog.cpp
+    Utils/applocation.cpp
 
 HEADERS += \
+    Controller/controller.h \
+    Conversion/grayscaleconverter.h \
+    Conversion/imageconverter.h \
+    Conversion/mirrorconverter.h \
+    Helpers/constants.h \
     Utils/utilspicture.h \
     Utils/applocation.h \
-    UI/mainwindow.h \
-    UI/wgtdropdownfeatures.h \
-    UI/wgtimage.h \
-    UI/wgtinputimage.h \
-    UI/wgtoutputimage.h \
-    UI/widgetcatalog.h
+    Widgets/mainwindow.h \
+    Widgets/wgtdropdownfeatures.h \
+    Widgets/wgtimage.h \
+    Widgets/wgtinputimage.h \
+    Widgets/wgtoutputimage.h \
+    Widgets/widgetcatalog.h
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

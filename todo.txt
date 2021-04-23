@@ -1,18 +1,17 @@
 
-
-* second picture as layout (make Util class for it)
-* default picture-logo as random from list (make Util class for it)
-
 * add readme file
-
-* scrols on pictures (zoomIn zoomOut autoZoom as menu)
 
 * doxygen comments
 * multilanguage	https://doc.qt.io/qt-5/i18n-source-translation.html
 
 * add UML Busines Logic
+* add Mirror conversion
 * add Night conversion
 * add Colorization conversion
+
+* apply default conversion for second picture
+
+* scrols on pictures (zoomIn zoomOut autoZoom as menu)
 
 * glich in list view
 
