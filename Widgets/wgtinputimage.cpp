@@ -58,9 +58,9 @@ QImage *WgtInputImage::getImage() const
     return inputImage->getImage();
 }
 
-void WgtInputImage::setController(Controller *controller)
+void WgtInputImage::setController(Controller *_controller)
 {
-    this->controller = controller;
+    controller = _controller;
 }
 
 void WgtInputImage::addItemToCombobox(ImageConverterInfo *imageConverterInfo)

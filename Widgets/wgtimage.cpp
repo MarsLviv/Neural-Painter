@@ -69,3 +69,4 @@ void WgtImage::resizeEvent(QResizeEvent *event)
 
     QWidget::resizeEvent(event);
 }
+

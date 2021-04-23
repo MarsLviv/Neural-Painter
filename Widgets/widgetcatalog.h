@@ -18,6 +18,9 @@ class WidgetCatalog : public QWidget
 public:
     WidgetCatalog(QWidget *parent = nullptr);
 
+protected:
+    bool event(QEvent *event);
+
 private:
     void onTreeViewClicked(const QModelIndex &index);
 

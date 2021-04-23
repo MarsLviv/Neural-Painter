@@ -22,11 +22,14 @@ public:
 
     void addItemToCombobox(ImageConverterInfo *imageConverterInfo);
 
-private:
-    QHBoxLayout * mainLayout {nullptr};
+protected:
+    bool event(QEvent *event);
 
-    QLabel * title {nullptr};
-    QComboBox * dropDownFeatures {nullptr};
+private:
+    QHBoxLayout *mainLayout {nullptr};
+
+    QLabel *title {nullptr};
+    QComboBox *dropDownFeatures {nullptr};
 };
 
 #endif // WGTDROPDOWNFEATURES_H

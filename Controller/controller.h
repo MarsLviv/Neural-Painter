@@ -25,7 +25,7 @@ private:
     ImageConverterInfo * makeConverterInfo(QString name, Conversions conversion);
 
 private:
-    ImageConverter * imageConverter {nullptr};
+    ImageConverter *imageConverter {nullptr};
 
     QVector<ImageConverterInfo *> imageConverterInfo;
 };

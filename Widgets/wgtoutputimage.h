@@ -21,12 +21,12 @@ public:
     void setImage(QString &fileName);
     QImage * getImage();
 private:
-    QVBoxLayout * mainLayout {nullptr};
+    QVBoxLayout *mainLayout {nullptr};
 
-    QLabel * outputImageTitle {nullptr};
-    WgtImage * outputImage {nullptr};
-    QPushButton * saveBtn {nullptr};
-    QPushButton * exitBtn {nullptr};
+    QLabel *outputImageTitle {nullptr};
+    WgtImage *outputImage {nullptr};
+    QPushButton *saveBtn {nullptr};
+    QPushButton *exitBtn {nullptr};
 
 };
 

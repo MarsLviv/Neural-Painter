@@ -32,12 +32,12 @@ public:
     void convert();
     void setInitialState();
 private:
-    QSplitter * mainSplitter {nullptr};
+    QSplitter *mainSplitter {nullptr};
 
-    WidgetCatalog * wgtCatalog {nullptr};
-    WgtInputImage * wgtInputImage {nullptr};
-    WgtOutputImage * wgtOutputImage {nullptr};
+    WidgetCatalog *wgtCatalog {nullptr};
+    WgtInputImage *wgtInputImage {nullptr};
+    WgtOutputImage *wgtOutputImage {nullptr};
 
-    Controller * controller {nullptr};
+    Controller *controller {nullptr};
 };
 #endif // MAINWINDOW_H

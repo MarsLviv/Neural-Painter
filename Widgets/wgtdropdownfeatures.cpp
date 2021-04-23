@@ -37,3 +37,8 @@ void WgtDropDownFeatures::addItemToCombobox(ImageConverterInfo * imageConverterI
     dropDownFeatures->addItem(imageConverterInfo->name(), static_cast<int>(imageConverterInfo->itemValue()));
 }
 
+bool WgtDropDownFeatures::event(QEvent *event)
+{
+    return QWidget::event(event);
+}
+

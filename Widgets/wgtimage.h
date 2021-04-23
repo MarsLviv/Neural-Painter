@@ -21,8 +21,8 @@ protected:
     void resizeEvent(QResizeEvent *event);
 
 private:
-    QLabel * inputPictureLabel {nullptr};
-    QImage * image {nullptr};
+    QLabel *inputPictureLabel {nullptr};
+    QImage *image {nullptr};
 };
 
 #endif // WGTIMAGE_H

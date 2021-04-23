@@ -34,12 +34,12 @@ private slots:
 private:
     QVBoxLayout * mainLayout {nullptr};
 
-    QLabel * inputImageTitle {nullptr};
-    WgtImage * inputImage {nullptr};
-    WgtDropDownFeatures * wgtDropDownFeatures {nullptr};
-    QPushButton * convertBtn {nullptr};
+    QLabel *inputImageTitle {nullptr};
+    WgtImage *inputImage {nullptr};
+    WgtDropDownFeatures *wgtDropDownFeatures {nullptr};
+    QPushButton *convertBtn {nullptr};
 
-    Controller * controller {nullptr};
+    Controller *controller {nullptr};
 };
 
 #endif // WGTINPUTIMAGE_H

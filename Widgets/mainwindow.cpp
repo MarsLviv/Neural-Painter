@@ -66,10 +66,10 @@ QImage *MainWindow::getOutputImage() const
 }
 
 
-void MainWindow::setController(Controller *controller)
+void MainWindow::setController(Controller *_controller)
 {
-    this->controller = controller;
-    wgtInputImage->setController(controller);
+    controller = _controller;
+    wgtInputImage->setController(_controller);
 }
 
 void MainWindow::addItemToCombobox(ImageConverterInfo *imageConverterInfo)
